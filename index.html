@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--==================== Meta Tags para SEO e Acessibilidade ====================-->
+    <meta name="description" content="Portfólio de Niwan Bernardo Batista, analista de dados e desenvolvedor web especializado em HTML, CSS e JavaScript.">
+    <meta name="keywords" content="Portfólio, Niwan Batista, Desenvolvedor Web, HTML, CSS, JavaScript, Niwan, Bernardo, Batista, Dados, Python, SQL, Power BI, Excel, R">
+    <meta name="author" content="Niwan Bernardo Batista">
+
+    <!--==================== Meta Tags Open Graph ====================-->
+    <meta property="og:title" content="Niwan Batista | Portfólio">
+    <meta property="og:description" content="Portfólio de Niwan Bernardo Batista, analista de dados e desenvolvedor web especializado em HTML, CSS e JavaScript.">
+    <meta property="og:image" content="assets/img/mockup.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!--==================== Favicon ========================-->
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+
+    <title>Niwan Batista | Portfólio</title>
+
+    <!--=================== Google Fonts ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--=================== Remixicons ====================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=================== SwiperJS CSS ====================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!--=================== Main CSS ====================-->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+
+<body>
+    <!--===================== Header =====================-->
+    <header id="header" class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__brand">Niwan Batista</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="ri-home-line nav__icon"></i>
+                            Início
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="ri-user-line nav__icon"></i>
+                            Sobre
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="ri-medal-line nav__icon"></i>
+                            Habilidades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#service" class="nav__link">
+                            <i class="ri-briefcase-line nav__icon"></i>
+                            Serviços</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="ri-folders-line nav__icon"></i>
+                            Portfólio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#blog" class="nav__link">
+                            <i class="ri-message-line nav__icon"></i>
+                            Publicações</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="ri-phone-line nav__icon"></i>
+                            Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__buttons">
+                <span class="theme__toggle">
+                    <i id="theme-toggle" class="ri-moon-line"></i>
+                </span>
+                <span class="nav__toggle">
+                    <i id="nav-toggle" class="ri-menu-4-line"></i>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <!--===================== Main =====================-->
+    <main class="main">
+        <!--===================== Home =====================-->
+        <section id="home" class="home">
+            <div class="d-grid home__wrapper container">
+                <div class="home__content">
+                    <h1 class="home__title">
+                        Eu sou o <span class="home__name">Niwan</span><br>
+                        <span id="typewriter"></span> <!-- Local para a animação typewriter -->
+                    </h1>
+                    <p class="home__description">
+                        Como Analista de Dados e Desenvolvedor de Software, eu transformo complexidade em simplicidade.
+                    </p>
+                    <a href="#contact" class="btn btn--primary">
+                        <i class="ri-mail-line"></i>
+                        Contato
+                    </a>
+                    <div class="social">
+                        <span class="social__title">Siga-me</span>
+                        <ul class="social__list">
+                            <li class="social__item">
+                                <a href="https://www.linkedin.com/in/niwanbatista/" class="social__link" target="_blank">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="https://github.com/niwanbernardo" class="social__link" target="_blank">
+                                    <i class="ri-github-fill"></i>
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="https://www.instagram.com/niwanbatista/" class="social__link" target="_blank">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="assets/img/celular2.png" alt="Niwan Batista" class="home__img" height="400" width="auto">
+            </div>
+        </section>
+
+        <!--===================== About =====================-->
+        <section id="about" class="about section">
+            <div class="d-grid about__wrapper container">
+                <div class="about__content">
+                    <span class="section__subtitle">Sobre mim</span>
+                    <h2 class="section__title">Desenvolvo soluções digitais que tornam a vida das pessoas mais simples. </h2>
+                    <p class="about__description">Eu me chamo Niwan Bernardo Batista. Sou um profissional da área de tecnologia com 22 anos de idade, atualmente cursando o ensino superior em Análise e Desenvolvimento de Sistemas na Faculdade de Tecnologia de São Paulo (FATEC-SP) e atuando na área de Pesquisa e Modelagem no Fundo Garantidor de Créditos (FGC), garantindo a segurança do Sistema Financeiro Nacional e protegendo o patrimônio das Instituições Financeiras.</p>
+                    <a href="javascript:void(0)" class="btn btn--primary"><i class="ri-article-line"></i>Baixar CV</a>
+                </div>
+                <img src="assets/img/sobre.png" alt="Foto Sobre Niwan Batista" class="about__img" height="450" width="auto">
+            </div>
+        </section>
+
+        <!--===================== Skills =====================-->
+        <section id="skills" class="skills section section-bg">
+            <div class="section__header container">
+                <span class="section__subtitle">Minhas Habilidades</span>
+                <h2 class="section__title">Ferramentas de Trabalho
+                </h2>
+            </div>
+            <div class="d-grid skills__wrapper container">
+                <div class="skills__content">
+                    <h3 class="skills__title">Dados</h3>
+                    <div class="skills__content-wrapper">
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/python.png" alt="Pythom Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">Python</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/database.png" alt="SQL Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">SQL</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/powerbi.png" alt="Power BI Logo"
+                                    class="skills__img">
+                            </div>
+                            <h3 class="skills__name">Power BI</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/excel.png" alt="Excel Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">Excel</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/rstudio.png" alt="R Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">RStudio</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/tableau.png" alt="Tableau Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">Tableau</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills__content">
+                    <h3 class="skills__title">Desenvolvimento Web</h3>
+                    <div class="skills__content-wrapper">
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/html-logo.svg" alt="HTML Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">HTML</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/css-logo.svg" alt="CSS Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">CSS</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/javascript-logo.svg" alt="JavaScript Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">JavaScript</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/nodejs-logo.svg" alt="Node.Js Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">Node.Js</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/react-logo.svg" alt=" React Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">React</h3>
+                        </div>
+                        <div class="skills__card">
+                            <div class="skills__img-wrapper">
+                                <img src="assets/img/figma-logo.svg" alt="Figma Logo" class="skills__img">
+                            </div>
+                            <h3 class="skills__name">Figma</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===================== Counter =====================-->
+        <section class="counter section">
+            <div class="d-grid counter__wrapper container">
+                <div class="counter__item">
+                    <span class="counter__icon">
+                        <i class="ri-user-line"></i>
+                    </span>
+                    <p class="counter__number" data-target="4">0</p>
+                    <h2 class="counter__title">Meses de Experiência</h2>
+                </div>
+                <div class="counter__item">
+                    <span class="counter__icon">
+                        <i class="ri-briefcase-line"></i>
+                    </span>
+                    <p class="counter__number" data-target="7">0</p>
+                    <h2 class="counter__title">Projetos Completos</h2>
+                </div>
+                <div class="counter__item">
+                    <span class="counter__icon">
+                        <i class="ri-cup-line"></i>
+                    </span>
+                    <p class="counter__number" data-target="1">0</p>
+                    <h2 class="counter__title">Xícaras de Chá</h2>
+                </div>
+                <div class="counter__item">
+                    <span class="counter__icon">
+                        <i class="ri-user-smile-line"></i>
+                    </span>
+                    <p class="counter__number" data-target="3">0</p>
+                    <h2 class="counter__title">Parceiros Satisfeitos</h2>
+                </div>
+            </div>
+        </section>
+
+        <!--===================== Services =====================-->
+        <section id="service" class="service section section-bg">
+            <div class="d-grid service__wrapper container">
+                <div class="service__content">
+                    <span class="section__subtitle">Meus Serviços</span>
+                    <h2 class="section__title">Como eu posso te ajudar</h2>
+
+                    <p class="service__description">
+                        Como Desenvolvedor de Software e Analista de Dados certificado pelo Google, meu objetivo profissional é 
+                        aplicar meus conhecimentos coletando, processando e analisando grandes conjuntos de dados para descobrir 
+                        tendências, padrões e oportunidades de negócios. Além disso, desenvolvo softwares e sites sob medida que 
+                        atende às necessidades dos clientes, automatizando processos manuais e contribuindo para resultados 
+                        significativos em um curto período de tempo.
+                    </p>
+
+                    <a href="#contact" class="btn btn--primary">
+                        <i class="ri-chat-3-line"></i>
+                        Vamos Conversar
+                    </a>
+                </div>
+                <div class="service__info">
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-bar-chart-box-line"></i>
+                        </div>
+                        <div class="service__info-wrapper">
+                            <h3 class="service__info-title">Análise de Dados</h3>
+                            <p class="service__description">
+                                Analiso dados com o objetivo de descobrir informações úteis e apoiar a tomada de decisão.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-code-line"></i>
+                        </div>
+                        <div class="service__info-wrapper">
+                            <h3 class="service__info-title">Frontend Development</h3>
+                            <p class="service__description">
+                                Desenvolvo sites profissionais, blogs, páginas web, plataformas digitais e portfólios.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service__card">
+                        <div class="service__icon">
+                            <i class="ri-settings-3-line"></i>
+                        </div>
+                        <div class="service__info-wrapper">
+                            <h3 class="service__info-title">Automação</h3>
+                            <p class="service__description">
+                                Trabalho com aplicações envolvendo a linguagem Python e RStudio para criar softwares e automatizar tarefas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===================== Portfolio =====================-->
+        <section id="portfolio" class="portfolio section">
+            <div class="section__header container">
+                <span class="section__subtitle">Meu Portfólio</span>
+                <h2 class="section__title">Projetos em destaque</h2>
+            </div>
+            <div class="d-grid portfolio__wrapper container">
+                <div class="portfolio__project">
+                    <div class="portfolio__overlay"></div>
+                    <img src="assets/img/dash1.png" alt="Dashboard Financeiro" class="portfolio__img">
+                    <div class="portfolio__info">
+                        <div class="portfolio__info-wrapper">
+                            <h3 class="portfolio__title">Dashboard Financeiro</h3>
+                            <p class="portfolio__description">
+                                Projeto desenvolvido no Power BI para monitorar o desempenho de um negócio, entender tendências e 
+                                apresentar informações de forma clara. 
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiZGVhYTgwMWQtM2RiYi00OWRjLTgxZDgtNzc1ZWQ3MjEzZTJkIiwidCI6IjhlZmUyMzg0LWEzNDUtNGQ1OC1iN2Q1LWIzNzQ2YmZiMDgzNSJ9" class="portfolio__link" target="_blank">
+                        <i class="ri-external-link-line"></i>
+                    </a>
+                </div>
+
+                <div class="portfolio__project">
+                    <div class="portfolio__overlay"></div>
+                    <img src="assets/img/dash2.png" alt="Dashboard Vendas" class="portfolio__img">
+                    <div class="portfolio__info">
+                        <div class="portfolio__info-wrapper">
+                            <h3 class="portfolio__title">Dashboard Vendas</h3>
+                            <p class="portfolio__description">
+                                Projeto desenvolvido no Power BI para monitorar o desempenho de um negócio, entender tendências e 
+                                apresentar informações de forma clara.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiZjYyYjZkYzktMDY3MS00MDAyLThmZDQtYjJhMjFkZDQ1ZWE5IiwidCI6IjhlZmUyMzg0LWEzNDUtNGQ1OC1iN2Q1LWIzNzQ2YmZiMDgzNSJ9" class="portfolio__link" target="_blank">
+                        <i class="ri-external-link-line"></i>
+                    </a>
+                </div>
+
+                <div class="portfolio__project">
+                    <div class="portfolio__overlay"></div>
+                    <img src="assets/img/website.png" alt="App Re-design" class="portfolio__img">
+                    <div class="portfolio__info">
+                        <div class="portfolio__info-wrapper">
+                            <h3 class="portfolio__title">Website Portfolio v1</h3>
+                            <p class="portfolio__description">
+                                Criação de uma página web simples para apresentação e portfólio.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://portfolio-niwanbernardo.vercel.app/" class="portfolio__link" target="_blank">
+                        <i class="ri-external-link-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--===================== blog =====================-->
+        <section id="blog" class="blog section section-bg">
+            <div class="section__header container">
+                <span class="section__subtitle">Minhas Publicações</span>
+                <h2 class="section__title">Últimas postagens & notícias</h2>
+            </div>
+            <div class="d-grid blog__wrapper container">
+                <div class="blog__post">
+                    <div class="blog__img-wrapper">
+                        <img src="assets/img/foto_fgc.png" alt="Imagem 1" class="blog__img">
+                        <span class="blog__category">Publicação</span>
+                    </div>
+                    <div class="blog__content">
+                        <h3 class="blog__title">O meu sim chegou!</h3>
+                        <p class="blog__description">
+                            Nesta publicação, compartilho a conquista do meu recente cargo no Fundo Garantidor de Créditos (FGC). 
+                        </p>
+                        <a href="https://www.linkedin.com/posts/niwanbatista_omeusimchegou-fgc-continueestudando-activity-7203366131070414848-NJlA?utm_source=share&utm_medium=member_desktop" class="blog__link" target="_blank">
+                            Leia Mais
+                            <i class="ri-arrow-right-s-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog__post">
+                    <div class="blog__img-wrapper">
+                        <img src="assets/img/todo.png" alt="" class="blog__img">
+                        <span class="blog__category">Web Development</span>
+                    </div>
+                    <div class="blog__content">
+                        <h3 class="blog__title">Projeto Todo List</h3>
+                        <p class="blog__description">
+                            Neste projeto, eu e meu grupo do curso de Desenvolvimento Web da ADA elaboramos uma aplicação web que registra e gerencia tarefas a serem feitas.
+                        </p>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7123729614962630658/" class="blog__link" target="_blank">
+                            Leia Mais
+                            <i class="ri-arrow-right-s-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog__post">
+                    <div class="blog__img-wrapper">
+                        <img src="assets/img/faculdade.jpeg" alt="" class="blog__img">
+                        <span class="blog__category">Publicação</span>
+                    </div>
+                    <div class="blog__content">
+                        <h3 class="blog__title">Vale a pena fazer faculdade no Brasil?</h3>
+                        <p class="blog__description">
+                            Neste post, gostaria de saber o que você acha sobre o ensino superior e te 
+                            apresentar um pouco da faculdade na qual estudo.
+                        </p>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7081754598146752513/" class="blog__link" target="_blank">
+                            Leia Mais
+                            <i class="ri-arrow-right-s-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===================== Contact =====================-->
+        <section id="contact" class="contact section">
+            <div class="section__header container">
+                <span class="section__subtitle">Vamos Conversar!</span>
+                <h2 class="section__title">Sinta-se à vontade para entrar em contato</h2>
+            </div>
+            <div class="d-grid contact__wrapper container">
+                <form action="" class="contact__form">
+                    <div class="form__group">
+                        <label for="" class="form__label">Nome</label>
+                        <input type="text" class="form__input" placeholder="Qual é o seu nome?" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="" class="form__label">Email</label>
+                        <input type="email" class="form__input" placeholder="E o seu email?" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="" class="form__label">Mensagem</label>
+                        <textarea class="form__input form__textarea"
+                            placeholder="Conte-me sobre o problema para resolvermos juntos"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">
+                        <i class="ri-send-plane-line"></i>Enviar Mensagem
+                    </button>
+                </form>
+                <div class="d-grid contact__content">
+                    <div class="contact__info">
+                        <div class="contact__icon">
+                            <i class="ri-phone-line"></i>
+                        </div>
+                        <div class="contact__info-wrapper">
+                            <h3 class="contact__title">Telefone:</h3>
+                            <p class="contact__description">(+55) 11 991359164</p>
+                        </div>
+                    </div>
+
+                    <div class="contact__info">
+                        <div class="contact__icon">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                        <div class="contact__info-wrapper">
+                            <h3 class="contact__title">Email:</h3>
+                            <p class="contact__description">niwan.batista@hotmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact__info">
+                        <div class="contact__icon">
+                            <i class="ri-map-pin-line"></i>
+                        </div>
+                        <div class="contact__info-wrapper">
+                            <h3 class="contact__title">Localização:</h3>
+                            <p class="contact__description">São Paulo, SP. Brasil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--===================== Footer =====================-->
+    <footer class="footer">
+        <div class="d-grid footer__wrapper container">
+            <div class="footer__content">
+                <h4 class="footer__name">Niwan Bernardo Batista</h4>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#home" class="footer__link">Início</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#about" class="footer__link">Sobre</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#skills" class="footer__link">Habilidades</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#service" class="footer__link">Serviços</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#portfolio" class="footer__link">Portfólio</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#blog" class="footer__link">Publicações</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#contact" class="footer__link">Contato</a>
+                    </li>
+                </ul>
+                <ul class="social__list">
+                    <li class="social__item">
+                        <a href="https://www.linkedin.com/in/niwanbatista/" class="social__link" target="_blank">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="https://github.com/niwanbernardo" class="social__link" target="_blank">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="https://www.instagram.com/niwanbatista/" class="social__link" target="_blank">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__copyright container">
+            <p>&copy; Copyright 2024 Desenvolvido por Niwan Bernardo Batista. Todos os Direitos Reservados</p>
+        </div>
+    </footer>
+    <a href="#" id="scrolltop" class="scrolltop">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=================== SwiperJS  ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--=================== ScrollReveal ==================-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=================== Main JS ====================-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
