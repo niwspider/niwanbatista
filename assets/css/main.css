@@ -125,7 +125,7 @@ body {
 #typewriter {
   display: inline-block;
   min-width: 300px; /* Ajuste conforme a largura necessária */
-  height: 75px; /* Ajuste a altura se necessário */
+  height: auto; /* Ajuste a altura se necessário */
   overflow: hidden;
   white-space: nowrap;
   vertical-align: bottom;

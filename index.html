@@ -12,8 +12,9 @@
 
     <!--==================== Meta Tags Open Graph ====================-->
     <meta property="og:title" content="Niwan Batista | Portfólio">
-    <meta property="og:description" content="Portfólio de Niwan Bernardo Batista, analista de dados e desenvolvedor web especializado em HTML, CSS e JavaScript.">
-    <meta property="og:image" content="https://i.postimg.cc/63qcg3xb/mockup.png">
+    <meta property="og:description" content="Portfólio de Niwan Bernardo Batista, engenheiro de dados e desenvolvedor web especializado em HTML, CSS e JavaScript.">
+    <meta property="og:image" content="https://niwanbatista.vercel.app/assets/images/website_mockup.png">
+    <meta property="og:url" content="https://niwanbatista.vercel.app">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     
@@ -254,7 +255,7 @@
                     <span class="counter__icon">
                         <i class="ri-user-line"></i>
                     </span>
-                    <p class="counter__number" data-target="12">0</p>
+                    <p class="counter__number" data-target="15">0</p>
                     <h2 class="counter__title">Meses de Experiência</h2>
                 </div>
                 <div class="counter__item">
@@ -291,7 +292,7 @@
                     <p class="service__description">
                         Sou um profissional de tecnologia especializado em Dados, focado em coletar, processar e 
                         analisar grandes volumes de dados para gerar insights estratégicos. Utilizo técnicas 
-                        avançadas de machine learning para identificar padrões, criar soluções automatizadas 
+                        de machine learning para identificar padrões, criar soluções automatizadas 
                         e integrar sistemas inteligentes, sempre buscando resultados inovadores e eficientes 
                         que agreguem valor ao negócio.
                     </p>
@@ -568,25 +569,26 @@
         <div class="footer__copyright container">
             <p>&copy; Copyright 2024 Desenvolvido por Niwan Bernardo Batista. Todos os Direitos Reservados</p>
         </div>
-        <!--===================== Language Translator =====================-->
-        <div class="gtranslate_wrapper"></div>
-        <script>
-            window.gtranslateSettings = {
-                "default_language": "pt",
-                "detect_browser_language": true,
-                "languages": ["pt", "es", "en", "it", "de"],
-                "wrapper_selector": ".gtranslate_wrapper",
-                "alt_flags": {
-                "en": "usa",
-                "pt": "brazil"
-                    }
-                        };
-        </script>
-        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     </footer>
     <a href="#" id="scrolltop" class="scrolltop">
         <i class="ri-arrow-up-line"></i>
     </a>
+
+    <!--===================== Language Translator =====================-->
+    <div class="gtranslate_wrapper"></div>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "pt",
+            "detect_browser_language": true,
+            "languages": ["pt", "es", "en", "it", "de"],
+            "wrapper_selector": ".gtranslate_wrapper",
+            "alt_flags": {
+            "en": "usa",
+            "pt": "brazil"
+                }
+                    };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
     <!--=================== SwiperJS  ====================-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -596,6 +598,8 @@
 
     <!--=================== Main JS ====================-->
     <script src="assets/js/main.js"></script>
-</body>
 
+    <!--=================== Neobot JS ====================-->
+    <script src="/neobot/embed.js" defer></script>
+</body>
 </html>
