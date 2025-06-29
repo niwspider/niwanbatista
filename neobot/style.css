@@ -166,7 +166,7 @@ body.show-chatbot .chatbot-popup {
   flex-grow: 1;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-gray-lighten) transparent;
+  scrollbar-color: var(--color-gray-light) transparent;
 }
 
 .chat-body .message {
@@ -201,7 +201,7 @@ body.show-chatbot .chatbot-popup {
 }
 
 .bot-message .message-text {
-  background-color: #e6f0fa;
+  background-color: #ffffff;
   border-radius: 13px 13px 13px 3px;
   color: var(--color-secondary);
 }
@@ -450,7 +450,6 @@ body.dark-theme #send-message:hover {
   }
 
   .chat-footer .chat-form {
-    border-radius: 0;
     padding: 0 10px;
   }
 

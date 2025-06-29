@@ -183,7 +183,12 @@ body {
 }
 
 .dark-theme .blog__post {
+  background-color: var(--color-secondary);
+}
+
+.dark-theme .form__input {
   background-color: var(--color-secondary-dark);
+  box-shadow: none;
 }
 
 .dark-theme .form__input::placeholder {
@@ -196,6 +201,11 @@ body {
 
 .dark-theme::-webkit-scrollbar-thumb {
   background-color: var(--color-gray-light);
+}
+
+.dark-theme .footer {
+  background-color: var(--color-secondary-dark);
+  color: var(--color-gray-light);
 }
 
 /* Reausable CSS Classes

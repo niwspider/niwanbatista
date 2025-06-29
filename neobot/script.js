@@ -1,20 +1,19 @@
-// Limite de mensagens por dia
+//===================== LIMITES DE MENSAGEM =====================
 const LIMITE_DIARIO = 30;
 const DATA_HOJE = new Date().toISOString().split("T")[0];
 const STORAGE_KEY = `mensagensEnviadas_${DATA_HOJE}`;
 
 function podeEnviarMensagemHoje() {
   const mensagensHoje = Number(localStorage.getItem(STORAGE_KEY)) || 0;
-
   if (mensagensHoje >= LIMITE_DIARIO) {
     alert("Você atingiu o limite diário de mensagens. Volte amanhã. 😊");
     return false;
   }
-
   localStorage.setItem(STORAGE_KEY, mensagensHoje + 1);
   return true;
 }
 
+//===================== ELEMENTOS DOM =====================
 const chatBody = document.querySelector(".chat-body");
 const messageInput = document.querySelector(".message-input");
 const sendMessageButton = document.querySelector("#send-message");
@@ -25,9 +24,12 @@ const chatbotToggler = document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
 const homeSection = document.getElementById("home");
 const chatbotPopup = document.querySelector(".chatbot-popup");
+
+//===================== CONFIGURAÇÕES DE API =====================
 const API_KEY = "AIzaSyDEXsHJ_6MWqOM-w9lNNU1riAV6ktrd7U0";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
+//===================== DADOS DO USUÁRIO =====================
 const userData = {
   message: null,
   file: {
@@ -42,7 +44,7 @@ let contextoNiwan = "";
 
 const initialInputHeight = messageInput.scrollHeight;
 
-// Carrega o contexto corretamente
+//===================== CONTEXTO DO CHATBOT =====================
 fetch('neobot/context/context-niwan.txt')
   .then(res => res.text())
   .then(text => {
@@ -53,7 +55,7 @@ fetch('neobot/context/context-niwan.txt')
     console.error("Erro ao carregar o contexto:", error);
   });
 
-// Cria elemento de mensagem
+//===================== FUNÇÕES UTILITÁRIAS =====================
 const createMessageElement = (content, ...classes) => {
   const div = document.createElement("div");
   div.classList.add("message", ...classes);
@@ -61,15 +63,12 @@ const createMessageElement = (content, ...classes) => {
   return div;
 };
 
-// Gera resposta do bot
+//===================== RESPOSTA DO BOT =====================
 const generateBotResponse = async (incomingMessageDiv) => {
   const messageElement = incomingMessageDiv.querySelector(".message-text");
 
   if (!contextoCarregado && contextoNiwan) {
-    chatHistory.push({
-      role: "user",
-      parts: [{ text: contextoNiwan }]
-    });
+    chatHistory.push({ role: "user", parts: [{ text: contextoNiwan }] });
     contextoCarregado = true;
   }
 
@@ -93,15 +92,10 @@ const generateBotResponse = async (incomingMessageDiv) => {
     if (!response.ok) throw new Error(data.error.message);
 
     const apiResponseText = data.candidates[0].content.parts[0].text
-      .replace(/\*\*(.*?)\*\*/g, "$1")
-      .trim();
+      .replace(/\*\*(.*?)\*\*/g, "$1").trim();
 
     messageElement.innerText = apiResponseText;
-
-    chatHistory.push({
-      role: "model",
-      parts: [{ text: apiResponseText }]
-    });
+    chatHistory.push({ role: "model", parts: [{ text: apiResponseText }] });
 
   } catch (error) {
     console.error(error);
@@ -113,11 +107,9 @@ const generateBotResponse = async (incomingMessageDiv) => {
   }
 };
 
-// Envia mensagem do usuário
+//===================== ENVIO DE MENSAGEM =====================
 const handleOutgoingMessage = (e) => {
   e.preventDefault();
-
-  // Limite diário
   if (!podeEnviarMensagemHoje()) return;
 
   userData.message = messageInput.value.trim();
@@ -151,7 +143,7 @@ const handleOutgoingMessage = (e) => {
   }, 600);
 };
 
-// Tecla Enter envia mensagem
+//===================== EVENTOS DE ENTRADA =====================
 messageInput.addEventListener("keydown", (e) => {
   const userMessage = e.target.value.trim();
   if (e.key === "Enter" && userMessage && !e.shiftKey && window.innerWidth > 768) {
@@ -159,18 +151,16 @@ messageInput.addEventListener("keydown", (e) => {
   }
 });
 
-// Resize automático da input
 messageInput.addEventListener("input", () => {
   messageInput.style.height = `${initialInputHeight}px`;
   messageInput.style.height = `${messageInput.scrollHeight}px`;
   document.querySelector("chat-form").style.borderRadius = messageInput.scrollHeight > initialInputHeight ? "15px" : "32px";
 });
 
-// Upload de arquivo
+//===================== UPLOAD DE ARQUIVO =====================
 fileInput.addEventListener("change", () => {
   const file = fileInput.files[0];
   if (!file) return;
-
   const reader = new FileReader();
   reader.onload = (e) => {
     const base64String = e.target.result.split(",")[1];
@@ -183,7 +173,7 @@ fileInput.addEventListener("change", () => {
   reader.readAsDataURL(file);
 });
 
-// Emoji picker
+//===================== EMOJI PICKER =====================
 const picker = new EmojiMart.Picker({
   theme: "light",
   skinTonePosition: "none",
@@ -201,32 +191,51 @@ const picker = new EmojiMart.Picker({
     }
   }
 });
+document.querySelector(".chat-form").appendChild(picker);
 
-// Intersection Observer
+//===================== RESIZE E SCROLL =====================
+let initialViewportHeight = window.innerHeight;
+let keyboardLikelyOpen = false;
+
+window.addEventListener("resize", () => {
+  const currentHeight = window.innerHeight;
+  const heightDifference = initialViewportHeight - currentHeight;
+  keyboardLikelyOpen = heightDifference > 100;
+});
+
+function estaNoTopoDaPagina() {
+  return window.scrollY <= 50;
+}
+
+//===================== INTERSECTION OBSERVER =====================
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Seção Home visível → mostra o botão e permite abrir o chatbot
+      const homeVisivel = entry.isIntersecting;
+      const topoVisivel = estaNoTopoDaPagina();
+      if (homeVisivel || topoVisivel) {
         chatbotToggler.classList.remove("hidden");
       } else {
-        // Fora da Home → esconde tanto o botão quanto a janela do chatbot
-        chatbotToggler.classList.add("hidden");
-        chatbotPopup.classList.remove("show-chatbot");
-        document.body.classList.remove("show-chatbot");
+        if (!keyboardLikelyOpen) {
+          chatbotToggler.classList.add("hidden");
+          chatbotPopup.classList.remove("show-chatbot");
+          document.body.classList.remove("show-chatbot");
+        }
       }
     });
   },
   {
-    threshold: 0.75, // Sensibilidade → ajustável
+    threshold: 0.75,
   }
 );
 observer.observe(homeSection);
 
+window.addEventListener("scroll", () => {
+  const topoVisivel = estaNoTopoDaPagina();
+  if (topoVisivel) chatbotToggler.classList.remove("hidden");
+});
 
-document.querySelector(".chat-form").appendChild(picker);
-
-// Botões
+//===================== BOTÕES =====================
 sendMessageButton.addEventListener("click", (e) => handleOutgoingMessage(e));
 document.querySelector("#file-upload").addEventListener("click", () => fileInput.click());
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
