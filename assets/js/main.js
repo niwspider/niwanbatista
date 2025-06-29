@@ -41,9 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
   setTimeout(type, typeSpeed);
 });
 
-
-
-
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
   navLinks = document.querySelectorAll(".nav__link");
