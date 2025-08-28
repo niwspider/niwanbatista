@@ -26,7 +26,7 @@ const homeSection = document.getElementById("home");
 const chatbotPopup = document.querySelector(".chatbot-popup");
 
 //===================== CONFIGURAÇÕES DE API =====================
-const API_KEY = "AIzaSyDEXsHJ_6MWqOM-w9lNNU1riAV6ktrd7U0";
+const API_KEY = "AIzaSyC2-0hbnQmcxbD57DDrA105Xb4-BLP02rI";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 //===================== DADOS DO USUÁRIO =====================
